@@ -16,11 +16,12 @@ struct MealListRow: View {
             AsyncImage(url: URL(string: meal.strMealThumb ?? "")) { image in
                 image
                     .resizable()
+                    .cornerRadius(6)
             } placeholder: {
                 ProgressView()
             }
             .frame(width: 80, height: 80)
-            Text(meal.strMeal ?? "Unnamed Recipe")
+            Text(meal.strMeal?.capitalized ?? "Unnamed Recipe")
         }
     }
 }

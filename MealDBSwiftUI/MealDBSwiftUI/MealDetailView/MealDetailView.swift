@@ -17,6 +17,7 @@ struct MealDetailView: View {
                 AsyncImage(url: viewModel.imageURL) { image in
                     image
                         .resizable()
+                        .cornerRadius(12)
                         .padding(.top)
                 } placeholder: {
                       ProgressView()
@@ -24,6 +25,7 @@ struct MealDetailView: View {
                 .frame(width: 200, height: 200)
                 Text(viewModel.strMeal)
                     .font(.title)
+                    .multilineTextAlignment(.center)
                 Text(viewModel.formattedInstructions)
                     .font(.caption)
             }
