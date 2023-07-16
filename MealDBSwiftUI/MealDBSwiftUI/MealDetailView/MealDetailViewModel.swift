@@ -17,7 +17,7 @@ class MealDetailViewModel: ObservableObject {
         return URL(string: meal.strMealThumb ?? "")
     }
     var strMeal: String {
-        meal.strMeal ?? "Unknown Meal"
+        meal.strMeal?.capitalized ?? "Unknown Meal"
     }
     
     let service: MealServicing
