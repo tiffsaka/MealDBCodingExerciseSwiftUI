@@ -28,20 +28,22 @@ class MealDetailViewModel: ObservableObject {
     }
     
     func fetchSingleMeal() {
-        service.fetchMeal(mealID: meal.id) { [weak self] result in
-            guard let self else { return }
-            Task { @MainActor in
-                switch result {
-                case .success(let meal):
-                    self.meal = meal
-                    self.filterIngredients()
-                    self.filterMeasures()
-                    self.formattedInstructions = meal.strInstructions?.updateLineSpacing() ?? "Unknown recipe"
-                case .failure(let error):
-                    print("Error fetching single meal: \(error)")
-                }
+        Task {
+            do {
+                let fetchedMeal = try await service.fetchMeal(mealID: meal.id)
+                await updateMealProperties(meal: fetchedMeal)
+            } catch {
+                print("Error fetching single meal: \(error)")
             }
         }
+    }
+    
+    @MainActor
+    private func updateMealProperties(meal: Meal) {
+            self.meal = meal
+            self.filterIngredients()
+            self.filterMeasures()
+            self.formattedInstructions = meal.strInstructions?.updateLineSpacing() ?? "Unknown recipe"
     }
     
     func filterIngredients() {

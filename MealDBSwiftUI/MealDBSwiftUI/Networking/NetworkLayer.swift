@@ -8,29 +8,29 @@
 import Foundation
 
 class NetworkLayer {
-
-    static func request<T: Decodable>(endpoint: APIEndpoint, completion: @escaping (Result<T, NetworkError>) -> Void) {
+    
+    static func request<T: Decodable>(endpoint: APIEndpoint) async throws -> T {
         guard let url = endpoint.makeURL() else {
-            return completion(.failure(.invalidURL))
+            throw NetworkError.invalidURL
         }
         
         print("URL*: \(url)")
-
-        URLSession.shared.dataTask(with: url) { data, _, error in
-            if let error = error {
-                return completion(.failure(.thrownError(error)))
-            }
-
-            guard let data = data else {
-                return completion(.failure(.noData))
-            }
-
-            do {
-                let result = try JSONDecoder().decode(T.self, from: data)
-                return completion(.success(result))
-            } catch {
-                return completion(.failure(.thrownError(error)))
-            }
-        }.resume()
+        
+        let (data, response) = try await URLSession.shared.data(from: url)
+        
+        guard let httpResponse = response as? HTTPURLResponse else {
+            throw NetworkError.invalidResponse
+        }
+        
+        guard (200...299).contains(httpResponse.statusCode) else {
+            throw NetworkError.httpError(httpResponse.statusCode)
+        }
+        
+        do {
+            let result = try JSONDecoder().decode(T.self, from: data)
+            return result
+        } catch {
+            throw NetworkError.unableToDecode
+        }
     }
 }

@@ -8,38 +8,23 @@
 import Foundation
 
 protocol MealServicing {
-    func fetchMeals(completion: @escaping (Result<[Meal], NetworkError>) -> Void)
-    func fetchMeal(mealID: String, completion: @escaping (Result<Meal, NetworkError>) -> Void)
+    func fetchMeals() async throws -> [Meal]
+    func fetchMeal(mealID: String) async throws -> Meal
 }
 
 class MealService: MealServicing {
-
-    func fetchMeals(completion: @escaping (Result<[Meal], NetworkError>) -> Void) {
-        NetworkLayer.request(endpoint: .meals) { (result: Result<Meals, NetworkError>) in
-            switch result {
-            case .success(let meals):
-                completion(.success(meals.meals))
-            case .failure(let error):
-                completion(.failure(.thrownError(error)))
-            }
-        }
+    
+    func fetchMeals() async throws -> [Meal] {
+        let meals: Meals = try await NetworkLayer.request(endpoint: .meals)
+        return meals.meals
     }
     
-    func fetchMeal(mealID: String, completion: @escaping (Result<Meal, NetworkError>) -> Void) {
+    func fetchMeal(mealID: String) async throws -> Meal {
         let endpoint = APIEndpoint.mealDetails(mealID)
-
-        NetworkLayer.request(endpoint: endpoint) { (result: Result<Meals, NetworkError>) in
-            switch result {
-            case .success(let meals):
-                guard let meal = meals.meals.first else {
-                    completion(.failure(.noData))
-                    return
-                }
-                completion(.success(meal))
-            case .failure(let error):
-                completion(.failure(.thrownError(error)))
-            }
+        let meals: Meals = try await NetworkLayer.request(endpoint: endpoint)
+        guard let meal = meals.meals.first else {
+            throw NetworkError.noData
         }
+        return meal
     }
 }
-

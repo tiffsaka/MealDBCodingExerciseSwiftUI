@@ -12,7 +12,7 @@ struct MealDBSwiftUIApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationStack {
-                ContentView()
+                MealListView()
             }
         }
     }
