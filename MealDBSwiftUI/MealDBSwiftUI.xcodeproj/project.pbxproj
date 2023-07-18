@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8E8E7F402A5385E3001B9F07 /* MealDBSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8E7F3F2A5385E3001B9F07 /* MealDBSwiftUIApp.swift */; };
-		8E8E7F422A5385E3001B9F07 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8E7F412A5385E3001B9F07 /* ContentView.swift */; };
+		8E8E7F422A5385E3001B9F07 /* MealListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8E7F412A5385E3001B9F07 /* MealListView.swift */; };
 		8E8E7F442A5385E4001B9F07 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E8E7F432A5385E4001B9F07 /* Assets.xcassets */; };
 		8E8E7F472A5385E4001B9F07 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E8E7F462A5385E4001B9F07 /* Preview Assets.xcassets */; };
 		8E8E7F4E2A53868C001B9F07 /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8E7F4D2A53868C001B9F07 /* Meal.swift */; };
@@ -26,7 +26,7 @@
 /* Begin PBXFileReference section */
 		8E8E7F3C2A5385E3001B9F07 /* MealDBSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MealDBSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E8E7F3F2A5385E3001B9F07 /* MealDBSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDBSwiftUIApp.swift; sourceTree = "<group>"; };
-		8E8E7F412A5385E3001B9F07 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		8E8E7F412A5385E3001B9F07 /* MealListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealListView.swift; sourceTree = "<group>"; };
 		8E8E7F432A5385E4001B9F07 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8E8E7F462A5385E4001B9F07 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8E8E7F4D2A53868C001B9F07 /* Meal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
@@ -94,7 +94,7 @@
 		8E8E7F5F2A55C8F2001B9F07 /* MainView */ = {
 			isa = PBXGroup;
 			children = (
-				8E8E7F412A5385E3001B9F07 /* ContentView.swift */,
+				8E8E7F412A5385E3001B9F07 /* MealListView.swift */,
 				8E8E7F5B2A55C820001B9F07 /* MealListRow.swift */,
 				8E8E7F572A55C6A3001B9F07 /* MealViewModel.swift */,
 			);
@@ -203,7 +203,7 @@
 				8E8E7F5C2A55C820001B9F07 /* MealListRow.swift in Sources */,
 				8E8E7F582A55C6A3001B9F07 /* MealViewModel.swift in Sources */,
 				8E8E7F502A538708001B9F07 /* MealService.swift in Sources */,
-				8E8E7F422A5385E3001B9F07 /* ContentView.swift in Sources */,
+				8E8E7F422A5385E3001B9F07 /* MealListView.swift in Sources */,
 				8E8E7F642A55CA9D001B9F07 /* MealDetailViewModel.swift in Sources */,
 				8E8E7F542A54B608001B9F07 /* APIConstants.swift in Sources */,
 				8E8E7F662A5617AA001B9F07 /* Extensions.swift in Sources */,

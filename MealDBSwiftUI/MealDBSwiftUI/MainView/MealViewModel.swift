@@ -17,18 +17,18 @@ class MealViewModel: ObservableObject {
         self.service = service
     }
     
-    func fetchMeals() {
-        service.fetchMeals { [weak self] result in
-            guard let self else { return }
-            Task { @MainActor in
-                switch result {
-                case .success(let meals):
-                    self.meals = self.sortMeals(meals: meals)
-                case .failure(let error):
-                    print("Error fetching: \(error)")
-                }
-            }
+    func fetchMeals() async {
+        do {
+            let meals = try await service.fetchMeals()
+            await updateMeals(meals: meals)
+        } catch {
+            print("Error fetching: \(error)")
         }
+    }
+    
+    @MainActor
+    private func updateMeals(meals: [Meal]) {
+        self.meals = self.sortMeals(meals: meals)
     }
     
     func sortMeals(meals: [Meal]) -> [Meal] {
