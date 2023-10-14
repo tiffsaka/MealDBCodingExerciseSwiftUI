@@ -21,7 +21,21 @@
 		8E8E7F642A55CA9D001B9F07 /* MealDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8E7F632A55CA9D001B9F07 /* MealDetailViewModel.swift */; };
 		8E8E7F662A5617AA001B9F07 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8E7F652A5617AA001B9F07 /* Extensions.swift */; };
 		8E8E7F6A2A58A073001B9F07 /* NetworkLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8E7F692A58A073001B9F07 /* NetworkLayer.swift */; };
+		8EDC6CF02AD481930000AA89 /* MealViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDC6CEF2AD481930000AA89 /* MealViewModelTests.swift */; };
+		8EDC6CF32AD4847C0000AA89 /* MockMealService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDC6CF22AD4847C0000AA89 /* MockMealService.swift */; };
+		8EEED0B42AD9E163008905DD /* MealDetailViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEED0B32AD9E163008905DD /* MealDetailViewModelTests.swift */; };
+		8EEED0B62ADB0388008905DD /* ExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEED0B52ADB0388008905DD /* ExtensionsTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8EDC6CEA2AD4815A0000AA89 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8E8E7F342A5385E3001B9F07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8E8E7F3B2A5385E3001B9F07;
+			remoteInfo = MealDBSwiftUI;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		8E8E7F3C2A5385E3001B9F07 /* MealDBSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MealDBSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -39,10 +53,22 @@
 		8E8E7F632A55CA9D001B9F07 /* MealDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDetailViewModel.swift; sourceTree = "<group>"; };
 		8E8E7F652A5617AA001B9F07 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		8E8E7F692A58A073001B9F07 /* NetworkLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLayer.swift; sourceTree = "<group>"; };
+		8EDC6CE62AD4815A0000AA89 /* MealDBSwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MealDBSwiftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8EDC6CEF2AD481930000AA89 /* MealViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealViewModelTests.swift; sourceTree = "<group>"; };
+		8EDC6CF22AD4847C0000AA89 /* MockMealService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockMealService.swift; sourceTree = "<group>"; };
+		8EEED0B32AD9E163008905DD /* MealDetailViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDetailViewModelTests.swift; sourceTree = "<group>"; };
+		8EEED0B52ADB0388008905DD /* ExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionsTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		8E8E7F392A5385E3001B9F07 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8EDC6CE32AD4815A0000AA89 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -56,6 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				8E8E7F3E2A5385E3001B9F07 /* MealDBSwiftUI */,
+				8EDC6CE72AD4815A0000AA89 /* MealDBSwiftUITests */,
 				8E8E7F3D2A5385E3001B9F07 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -64,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				8E8E7F3C2A5385E3001B9F07 /* MealDBSwiftUI.app */,
+				8EDC6CE62AD4815A0000AA89 /* MealDBSwiftUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -129,6 +157,33 @@
 			path = MealDetailView;
 			sourceTree = "<group>";
 		};
+		8EDC6CE72AD4815A0000AA89 /* MealDBSwiftUITests */ = {
+			isa = PBXGroup;
+			children = (
+				8EEED0B22AD9E141008905DD /* Tests */,
+				8EDC6CF12AD484540000AA89 /* Mocks */,
+			);
+			path = MealDBSwiftUITests;
+			sourceTree = "<group>";
+		};
+		8EDC6CF12AD484540000AA89 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				8EDC6CF22AD4847C0000AA89 /* MockMealService.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		8EEED0B22AD9E141008905DD /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				8EDC6CEF2AD481930000AA89 /* MealViewModelTests.swift */,
+				8EEED0B32AD9E163008905DD /* MealDetailViewModelTests.swift */,
+				8EEED0B52ADB0388008905DD /* ExtensionsTests.swift */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -149,6 +204,24 @@
 			productReference = 8E8E7F3C2A5385E3001B9F07 /* MealDBSwiftUI.app */;
 			productType = "com.apple.product-type.application";
 		};
+		8EDC6CE52AD4815A0000AA89 /* MealDBSwiftUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8EDC6CEE2AD4815A0000AA89 /* Build configuration list for PBXNativeTarget "MealDBSwiftUITests" */;
+			buildPhases = (
+				8EDC6CE22AD4815A0000AA89 /* Sources */,
+				8EDC6CE32AD4815A0000AA89 /* Frameworks */,
+				8EDC6CE42AD4815A0000AA89 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8EDC6CEB2AD4815A0000AA89 /* PBXTargetDependency */,
+			);
+			name = MealDBSwiftUITests;
+			productName = MealDBSwiftUITests;
+			productReference = 8EDC6CE62AD4815A0000AA89 /* MealDBSwiftUITests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -161,6 +234,10 @@
 				TargetAttributes = {
 					8E8E7F3B2A5385E3001B9F07 = {
 						CreatedOnToolsVersion = 14.3.1;
+					};
+					8EDC6CE52AD4815A0000AA89 = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = 8E8E7F3B2A5385E3001B9F07;
 					};
 				};
 			};
@@ -178,6 +255,7 @@
 			projectRoot = "";
 			targets = (
 				8E8E7F3B2A5385E3001B9F07 /* MealDBSwiftUI */,
+				8EDC6CE52AD4815A0000AA89 /* MealDBSwiftUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -189,6 +267,13 @@
 			files = (
 				8E8E7F472A5385E4001B9F07 /* Preview Assets.xcassets in Resources */,
 				8E8E7F442A5385E4001B9F07 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8EDC6CE42AD4815A0000AA89 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,7 +299,26 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8EDC6CE22AD4815A0000AA89 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8EEED0B42AD9E163008905DD /* MealDetailViewModelTests.swift in Sources */,
+				8EDC6CF32AD4847C0000AA89 /* MockMealService.swift in Sources */,
+				8EDC6CF02AD481930000AA89 /* MealViewModelTests.swift in Sources */,
+				8EEED0B62ADB0388008905DD /* ExtensionsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8EDC6CEB2AD4815A0000AA89 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8E8E7F3B2A5385E3001B9F07 /* MealDBSwiftUI */;
+			targetProxy = 8EDC6CEA2AD4815A0000AA89 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		8E8E7F482A5385E4001B9F07 /* Debug */ = {
@@ -389,6 +493,42 @@
 			};
 			name = Release;
 		};
+		8EDC6CEC2AD4815A0000AA89 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = KA3ACSM694;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tiffanysakaguchi.MealDBSwiftUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MealDBSwiftUI.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MealDBSwiftUI";
+			};
+			name = Debug;
+		};
+		8EDC6CED2AD4815A0000AA89 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = KA3ACSM694;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tiffanysakaguchi.MealDBSwiftUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MealDBSwiftUI.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MealDBSwiftUI";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -406,6 +546,15 @@
 			buildConfigurations = (
 				8E8E7F4B2A5385E5001B9F07 /* Debug */,
 				8E8E7F4C2A5385E5001B9F07 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8EDC6CEE2AD4815A0000AA89 /* Build configuration list for PBXNativeTarget "MealDBSwiftUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8EDC6CEC2AD4815A0000AA89 /* Debug */,
+				8EDC6CED2AD4815A0000AA89 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
